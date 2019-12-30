@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<title>Dnipro live</title>
+	<meta name="author" content="https://github.com/Kybbot">
+	<meta name="description" content="Dnipro live">
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link rel="icon" href="img/favicon/favicon.png">
+
+	<meta name="theme-color" content="#000">
+
+	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap&subset=cyrillic" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+	<div class="preloader">
+		<div class='cssload-loader'>
+			<div class='cssload-inner cssload-one'></div>
+			<div class='cssload-inner cssload-two'></div>
+			<div class='cssload-inner cssload-three'></div>
+		</div>
+	</div>
+	
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12 d-flex justify-content-between align-items-center">
+					<div class="date">24 Декабря</div>
+					<div class="site-title">Dniro live</div>
+					<div class="socials">
+						<button class="button pinterest"><a href="https://www.pinterest.com/Dreddq/" target="_blank"><i class="fab fa-pinterest"></i></a></button>
+						<button class="button github"><a href="https://github.com/Kybbot" target="_blank"><i class="fab fa-github"></i></a></button>
+						<!-- <button class="btn instagram"><a href="#"><i class="fab fa-instagram"></i></a></button> -->
+					</div>
+					<!-- <div class="buttons">
+						<button class="btn light-mode"><i class="fas fa-adjust"></i></button>
+						<button class="btn settings"><i class="fas fa-cog"></i></button>
+					</div> -->
+				</div>			
+			</div>			
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+			<div class="row">
+
+				<div class="col-xl-3">
+					<div class="overlay weather">
+						<div class="ico"></div>
+						<div class="text">
+							<div class="name">Днепр</div>
+							<div class="description"></div>
+						</div>
+						<div class="temp">
+							<div class="current-temp"></div>
+							<div class="max-min-temp">
+								<div class="min-temp"></div>
+								<div class="max-temp"></div>
+							</div>
+						</div>
+					</div>
+					<div class="music">
+						<iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=ffcb00&layout=dark&size=medium&type=radio&id=radio-37151&app_id=1" width="100%" height="91"></iframe>
+					</div>
+				</div>
+
+				<div class="col-xl-6">
+					<div class="tab-container">
+						<div class="tab-title-container">
+							<div class="tab-title">Карта</div>
+							<div class="tab-title">Новости</div>
+						</div>
+						<div class="tab-content"><div id="map" class="map"></div></div>
+						<div class="tab-content"><div class="news"></div></div>
+					</div>					
+				</div>
+
+				<div class="col-xl-3">
+					<div class="overlay crypto">
+						<div class="btc"><div class="crypto-name"><img src="img/btc.png" alt="btc">BTC</div><span class="btc-price"></span></div>
+						<div class="eth"><div class="crypto-name"><img src="img/eth.png" alt="eth">ETH</div> <span class="eth-price"></span></div>
+						<div class="xrp"><div class="crypto-name"><img src="img/xrp.png" alt="xrp">XRP</div> <span class="xrp-price"></span></div>
+						<div class="usdt"><div class="crypto-name"><img src="img/usdt.png" alt="usdt">USDT</div> <span class="usdt-price"></span></div>
+						<div class="bch"><div class="crypto-name"><img src="img/bch.png" alt="bch">BCH</div> <span class="bch-price"></span></div>
+						<div class="ltc"><div class="crypto-name"><img src="img/ltc.png" alt="ltc">LTC</div> <span class="ltc-price"></span></div>
+					</div>
+					<div class="overlay flex-column money">
+						<div class="money-title">
+							<p>Валюта</p>
+							<p>Покупка</p>
+							<p>Продажа</p>
+						</div>
+						<div class="usd"></div>
+						<div class="eur"></div>
+						<div class="rub"></div>
+					</div>
+				</div>
+
+			</div>	
+		</div>
+	</main>
+	
+	<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
