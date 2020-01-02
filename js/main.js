@@ -81,25 +81,25 @@ document.body.onload = function() {
 		let bchDiv = document.querySelector('.bch-price');
 		let ltcDiv = document.querySelector('.ltc-price');
 
-		let response = await fetch('http://api.coinlayer.com/api/live?access_key=ee30b5efaf163adceb1907f8ffa35833&symbols=BTC,ETH,XRP,USDT,BCH,LTC');
+		let response = await fetch('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP,USDT,BCH,LTC&tsyms=USD&api_key=872d2daf9f734d4e568f94419dd67cdcc19a688bf8ef6bc447b2bcbd0eb42c37 ');
 		let data = await response.json();
 
-		let btc = data.rates.BTC;
+		let btc = data.BTC.USD;
 		btcDiv.innerHTML = Math.floor(btc * 100) / 100;
 
-		let eth = data.rates.ETH;
+		let eth = data.ETH.USD;
 		ethDiv.innerHTML = Math.floor(eth * 100) / 100;
 
-		let xrp = data.rates.XRP;
+		let xrp = data.XRP.USD;
 		xrpDiv.innerHTML = Math.floor(xrp * 100) / 100;
 
-		let usdt = data.rates.USDT;
+		let usdt = data.USDT.USD;
 		usdtDiv.innerHTML = Math.floor(usdt * 100) / 100;
 
-		let bch = data.rates.BCH;
+		let bch = data.BCH.USD;
 		bchDiv.innerHTML = Math.floor(bch * 100) / 100;
 
-		let ltc = data.rates.LTC;
+		let ltc = data.LTC.USD;
 		ltcDiv.innerHTML = Math.floor(ltc * 100) / 100;
 
 	}
