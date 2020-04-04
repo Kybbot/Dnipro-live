@@ -8,6 +8,8 @@ document.body.onload = function() {
 		}
 	}, 1000);
 
+}
+
 	var map;
 
 	DG.then(function () {
@@ -15,10 +17,10 @@ document.body.onload = function() {
 					center: [48.45, 35.0],
 					zoom: 11,
 					maxBounds: [
-						[48.0, 34.0],
-						[49.0, 36.0]
+						[48.35, 34.90],
+						[48.55, 35.20]
 					],
-					minZoom: 9,
+					minZoom: 10,
 			});
 
 		DG.control.location({position: 'bottomright'}).addTo(map);
@@ -223,5 +225,3 @@ document.body.onload = function() {
 			}
 		};
 	});
-
-}
