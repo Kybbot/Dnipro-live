@@ -158,11 +158,11 @@ document.body.onload = function() {
 			author.classList.add('author');
 			author.innerHTML = item.author;
 
-			let description = document.createElement('div');
+			let description = document.createElement('p');
 			description.classList.add('description');
 			description.innerHTML = item.description;
 
-			let publishedAt = document.createElement('div');
+			let publishedAt = document.createElement('time');
 			publishedAt.classList.add('publishedAt');
 			publishedAt.innerHTML = item.publishedAt.slice(0, 10);
 			
@@ -171,11 +171,12 @@ document.body.onload = function() {
 			title.innerHTML = item.title;
 
 			let img = document.createElement('img');
+			img.classList.add('lazyload');
 
 			if (item.urlToImage === null) {
-				img.src = 'img/news.jpg';
+				img.setAttribute('data-src','img/news.jpg');
 			} else {
-				img.src = item.urlToImage;
+				img.setAttribute('data-src', item.urlToImage);
 			}
 
 			text.append(link);			
