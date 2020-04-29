@@ -10,10 +10,11 @@ body{
 	background-position: center;
 	color: #ffffff;
 	overflow: hidden;
+	position: relative;
 }
 
 .preloader{
-	position: fixed;
+	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
