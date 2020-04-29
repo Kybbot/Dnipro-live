@@ -66,8 +66,6 @@ document.body.onload = function() {
 		let response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Dnipro&lang=ru&appid=64b842bc5c15ff3d37a1f815e7b3bf55');
 		let data = await response.json();
 
-		console.log(data)
-
 		let weatherIco = data.weather[0].icon;
 		icoDiv.innerHTML = `<img src="https://openweathermap.org/img/w/${weatherIco}.png">`;
 
