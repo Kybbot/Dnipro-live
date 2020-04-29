@@ -44,6 +44,13 @@ document.body.onload = function() {
 
 	getDate();
 
+	let weatherMoreDiv = document.querySelector('.weather-more');
+	let weatherArrow = document.querySelector('.weather-arrow');
+
+	weatherArrow.addEventListener('click', function() {
+		weatherMoreDiv.classList.toggle('weather-more-visivle')
+	});
+
 	async function weather() {
 
 		let icoDiv = document.querySelector('.ico');
@@ -51,9 +58,15 @@ document.body.onload = function() {
 		let currentTempDiv = document.querySelector('.current-temp');
 		let minTempDiv = document.querySelector('.min-temp');
 		let maxTempDiv = document.querySelector('.max-temp');
+		let windDiv = document.querySelector('.wind')
+		let humidityDiv = document.querySelector('.humidity')
+		let visibilityDiv = document.querySelector('.visibility')
+		let cloudsDiv = document.querySelector('.clouds')
 
 		let response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Dnipro&lang=ru&appid=64b842bc5c15ff3d37a1f815e7b3bf55');
 		let data = await response.json();
+
+		console.log(data)
 
 		let weatherIco = data.weather[0].icon;
 		icoDiv.innerHTML = `<img src="https://openweathermap.org/img/w/${weatherIco}.png">`;
@@ -62,13 +75,25 @@ document.body.onload = function() {
 		descriptionDiv.innerHTML = weatherDescription;
 
 		let temp = Math.round(data.main.temp - 273);
-		currentTempDiv.innerHTML =  temp + '&#176;C' ;
+		currentTempDiv.innerHTML =  temp + '&#176;C';
 
 		let minTemp = Math.round(data.main.temp_min - 273);
-		minTempDiv.innerHTML = '<i class="fas fa-long-arrow-alt-down"></i> ' + minTemp + '&#176;C' ;
+		minTempDiv.innerHTML = '&#8595; ' + minTemp + '&#176;C';
 
 		let maxTemp = Math.round(data.main.temp_max - 273);
-		maxTempDiv.innerHTML = '<i class="fas fa-long-arrow-alt-up"></i> ' + maxTemp + '&#176;C' ;
+		maxTempDiv.innerHTML = '&#8593; ' + maxTemp + '&#176;C';
+
+		let wind = data.wind.speed;
+		windDiv.innerHTML = 'Ветер: ' + wind + ' км/ч';
+
+		let humidity = data.main.humidity;
+		humidityDiv.innerHTML = 'Влажность: ' + humidity + '%';
+
+		let visibility = data.visibility;
+		visibilityDiv.innerHTML = 'Видимость: ' + visibility/1000 + ' км';
+
+		let clouds = data.clouds.all;
+		cloudsDiv.innerHTML = 'Облачность: ' + clouds + '%';
 
 	}
 
