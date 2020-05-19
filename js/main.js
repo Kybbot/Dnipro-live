@@ -51,6 +51,22 @@ document.body.onload = function() {
 		weatherMoreDiv.classList.toggle('weather-more-visivle')
 	});
 
+	const deg = 6;
+	const hr = document.querySelector('#hr');
+	const mn = document.querySelector('#mn');
+	const sc = document.querySelector('#sc');
+
+	setInterval( () => {
+		let days = new Date();
+		let hh = days.getHours() * 30;
+		let mm = days.getMinutes() * deg;
+		let ss = days.getSeconds() * deg;
+
+		hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
+		mn.style.transform = `rotateZ(${mm}deg)`;
+		sc.style.transform = `rotateZ(${ss}deg)`;
+	});
+
 	async function weather() {
 
 		let icoDiv = document.querySelector('.ico');
