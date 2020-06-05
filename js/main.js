@@ -177,7 +177,7 @@ document.body.onload = function() {
 
 		let newsDiv = document.querySelector('.news');
 
-		let response = await fetch('https://newsapi.org/v2/top-headlines?country=ua&apiKey=c9b736f8e4da4e5aa80920dbef6738d8');
+		let response = await fetch('https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=ua&apiKey=c9b736f8e4da4e5aa80920dbef6738d8');
 		let data = await response.json();
 
 		data.articles.map(function(item) {
